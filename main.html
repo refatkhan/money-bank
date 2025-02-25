@@ -21,7 +21,7 @@
               <img src="./assets/Group.png" alt="logo" />
             </div>
             <div>
-              <h1>$ 45000</h1>
+              <h1>$ <span id="main-balance">45000</span></h1>
               <p>available balance</p>
             </div>
           </div>
@@ -40,61 +40,136 @@
             is low and
           </p>
         </div>
-        <div class="cards grid grid-cols-3 gap-2 p-2 ">
-            <div class="box cursor-pointer border p-4 text-center rounded-md ">
-                <img src="./assets/wallet1.png" alt="" class="inline-block">
-                <h3>Add Money </h3>
-            </div>
-            <div class="box cursor-pointer  border p-4 text-center rounded-md">
-                <img src="./assets/send1.png" alt="" class="inline-block">
-                <h3>Cashout </h3>
-            </div>
-            <div class="box cursor-pointer  border p-4 text-center rounded-md">
-                <img src="./assets/money1.png" alt="" class="inline-block">
-                <h3>Transfer Money</h3>
-            </div>
-            <div class="box cursor-pointer  border p-4 text-center rounded-md">
-                <img src="./assets/bonus1.png" alt="" class="inline-block">
-                <h3>Get Bonus</h3>
-            </div>
-            <div class="box cursor-pointer  border p-4 text-center rounded-md">
-                <img src="./assets/purse1.png" alt="" class="inline-block">
-                <h3>Pay Bill </h3>
-            </div>
-            <div class="box cursor-pointer  border p-4 text-center rounded-md">
-                <img src="./assets/transaction1.png" alt="" class="inline-block">
-                <h3>Transactions</h3>
-            </div>
+        <div class="cards grid grid-cols-3 gap-2 p-2">
+          <div
+            id="add-money-box"
+            class="box cursor-pointer border p-4 text-center rounded-md"
+          >
+            <img src="./assets/wallet1.png" alt="" class="inline-block" />
+            <h3>Add Money</h3>
+          </div>
+          <div
+            id="cash-out-box"
+            class="box cursor-pointer border p-4 text-center rounded-md"
+          >
+            <img src="./assets/send1.png" alt="" class="inline-block" />
+            <h3>Cashout</h3>
+          </div>
+          <div class="box cursor-pointer border p-4 text-center rounded-md">
+            <img src="./assets/money1.png" alt="" class="inline-block" />
+            <h3>Transfer Money</h3>
+          </div>
+          <div class="box cursor-pointer border p-4 text-center rounded-md">
+            <img src="./assets/bonus1.png" alt="" class="inline-block" />
+            <h3>Get Bonus</h3>
+          </div>
+          <div class="box cursor-pointer border p-4 text-center rounded-md">
+            <img src="./assets/purse1.png" alt="" class="inline-block" />
+            <h3>Pay Bill</h3>
+          </div>
+          <div class="box cursor-pointer border p-4 text-center rounded-md">
+            <img src="./assets/transaction1.png" alt="" class="inline-block" />
+            <h3>Transactions</h3>
+          </div>
         </div>
       </section>
       <!-- Add money  -->
-       <section>
+      <section id="add-money-section">
         <h2>Add Money</h2>
         <div class="">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <div class="card-body">
-                    <legend>Select Bank</legend>
-                    <select class="select">
-                        <option disabled selected>Pick Bank</option>
-                        <option value="bkash">Bkash</option >
-                        <option value="nagad">Nagad</option >
-                        <option value="dbbl" >DBBL</option >
-                      </select>
-                      <fieldset class="fieldset">
-                        <label class="fieldset-label">Number</label>
-                        <input id="account-number" value="" type="number" class="input" placeholder="Enter Your Number" required />
-                        <label class="fieldset-label">Ammount to add</label>
-                        <input id="account-ammount" value="" type="number" class="input" placeholder="Enter Your Ammount" required />
-                        <label class="fieldset-label">Pin</label>
-                        <input id="account-pin" value="" type="text" class="input" placeholder="Enter your 4 digit pin" required />
-                        <button id="add-money" class="btn btn-neutral bg-blue-900 border-none rounded-3xl mt-4">Add Money</button>
-                      </fieldset>
-                </div>
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <div class="card-body">
+                <legend>Select Bank</legend>
+                <select class="select">
+                  <option disabled selected>Pick Bank</option>
+                  <option value="bkash">Bkash</option>
+                  <option value="nagad">Nagad</option>
+                  <option value="dbbl">DBBL</option>
+                </select>
+                <fieldset class="fieldset">
+                  <label class="fieldset-label">Number</label>
+                  <input
+                    id="account-number"
+                    value=""
+                    type="number"
+                    class="input"
+                    placeholder="Enter Your Number"
+                    required
+                  />
+                  <label class="fieldset-label">Amount to add</label>
+                  <input
+                    id="account-ammount"
+                    value=""
+                    type="number"
+                    class="input"
+                    placeholder="Enter Your Amount"
+                    required
+                  />
+                  <label class="fieldset-label">Pin</label>
+                  <input
+                    id="account-pin"
+                    value=""
+                    type="text"
+                    class="input"
+                    placeholder="Enter your 4 digit pin"
+                    required
+                  />
+                  <button
+                    id="add-money"
+                    class="btn btn-neutral bg-blue-900 border-none rounded-3xl mt-4"
+                  >
+                    Add Money
+                  </button>
+                </fieldset>
               </div>
             </div>
           </div>
-       </section>
+        </div>
+      </section>
+      <!-- Cashout section -->
+      <section id="cashout">
+        <h2>Cash-out</h2>
+        <fieldset class="fieldset">
+          <label class="fieldset-label">Number</label>
+          <input
+            id="account-number"
+            value=""
+            type="number"
+            class="input"
+            placeholder="Enter Agent Number"
+            required
+          />
+          <label class="fieldset-label">Amount</label>
+          <input
+            id="cashout-ammount"
+            value=""
+            type="number"
+            class="input"
+            placeholder="Enter Your Amount"
+            required
+          />
+          <label class="fieldset-label">Pin</label>
+          <input
+            id="cashout-pin"
+            value=""
+            type="text"
+            class="input"
+            placeholder="Enter your 4 digit pin"
+            required
+          />
+          <button
+            id="cashout-money"
+            class="btn btn-neutral bg-blue-900 border-none rounded-3xl mt-4"
+          >
+            Cashout
+          </button>
+        </fieldset>
+      </section>
     </section>
+
+    <script src="./scripts/toggle.js"></script>
+    <script src="./scripts/addmoney.js"></script>
+    <script src="./scripts/cashout.js"></script>
   </body>
 </html>
